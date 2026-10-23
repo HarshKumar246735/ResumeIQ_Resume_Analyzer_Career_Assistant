@@ -1,8 +1,14 @@
 # ResumeIQ — Resume Analyzer & Career Assistant
+LIVE DEMO -- https://resume-iq-resume-analyzer-career-as.vercel.app/
+<img width="1897" height="925" alt="image" src="https://github.com/user-attachments/assets/2129062d-934f-44d6-82d4-b0db516c365f" />
+
 
 ResumeIQ is a MERN stack web application that helps users analyze their resumes, improve their content, and create professional resumes.
 
 ## Main Features
+
+<img width="1912" height="922" alt="image" src="https://github.com/user-attachments/assets/ef510237-afb7-4337-a326-5852042d84d5" />
+
 
 * **User Authentication:** Register, log in, and log out.
 * **Resume Upload:** Upload PDF and DOCX resumes.
@@ -11,6 +17,8 @@ ResumeIQ is a MERN stack web application that helps users analyze their resumes,
 * **Resume History:** Search, sort, and delete previous analyses.
 * **Resume Builder:** Create resumes using four templates, customize colors and text, and download them as PDF.
 * **Resume Management:** Save and manage multiple resumes.
+<img width="1917" height="922" alt="image" src="https://github.com/user-attachments/assets/14046a0a-316b-41cc-a671-f4f04e9572a0" />
+
 
 ## Technology Stack
 
