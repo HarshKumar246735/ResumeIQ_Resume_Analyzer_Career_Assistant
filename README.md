@@ -1,44 +1,62 @@
-# ResumeIQ
+# ResumeIQ — Resume Analyzer & Career Assistant
 
-Resume analyzer and career assistant (MERN). **Status: Steps 1-4 written. The server and client have NOT been installed, run or integration-tested.**
+ResumeIQ is a MERN stack web application that helps users analyze their resumes, improve their content, and create professional resumes.
 
-## What exists
-- `server/`: Express API with cookie auth (register, login, logout, me), PDF/DOCX upload and parsing, resume CRUD, structured extraction. Models: User, Resume.
-- Analysis API (`/api/analysis`, `/api/dashboard/overview`) with saved history; pages for upload and analyze, results, history (search, sort, pagination, delete), and resumes.
-- Resume builder (`/api/builder`): editor with 4 templates, accent color, text size, section visibility, entry reordering, live preview, save, and PDF via the browser print dialog (choose "Save as PDF"; text stays selectable).
-- Client forms now call the real API; dashboard routes are protected.
-- `server/services/analysisEngine.js`: explainable, rule-based scoring, with 5 unit tests. Not yet connected to any API.
-- `client/`: Vite + React app with landing page, login/register (UI only), dashboard layout and routes.
+## Main Features
 
-## What does not exist yet
-Analysis comparison, PDF report export, editing extracted fields, jobs, interviews, roadmap, history, settings, admin, PDF export, AI provider, API integration tests.
+* **User Authentication:** Register, log in, and log out.
+* **Resume Upload:** Upload PDF and DOCX resumes.
+* **Resume Analysis:** Analyze resumes and provide scores and suggestions.
+* **Dashboard:** View resume statistics and previous analyses.
+* **Resume History:** Search, sort, and delete previous analyses.
+* **Resume Builder:** Create resumes using four templates, customize colors and text, and download them as PDF.
+* **Resume Management:** Save and manage multiple resumes.
 
-## Run the backend
+## Technology Stack
+
+* Frontend: React.js + Vite
+* Backend: Node.js + Express.js
+* Database: MongoDB
+* Authentication: JWT + Cookies
+* PDF/DOCX Parsing: Resume extraction libraries
+* Styling: Normal CSS
+
+## Current Status
+
+The initial code has been written, but the frontend and backend have not yet been installed, run, or tested together.
+
+### Not Implemented Yet
+
+* Resume comparison.
+* PDF analysis report download.
+* Job recommendations.
+* Interview preparation.
+* Career roadmap.
+* AI-powered analysis.
+* Complete API integration testing.
+
+## How to Run
+
+**Backend:**
+
 ```bash
 cd server
 npm install
-cp .env.example .env   # set MONGODB_URI, JWT_SECRET (32+ chars), CLIENT_URL
-npm run dev            # http://localhost:5000/api/health
+cp .env.example .env
+npm run dev
 ```
-For the client set `VITE_API_URL=http://localhost:5000/api`. In production, cross-site cookies use `SameSite=None; Secure`, so both sites must be HTTPS and `CLIENT_URL` must match the frontend origin exactly.
 
-## Run the frontend
+Configure `MONGODB_URI`, `JWT_SECRET`, and `CLIENT_URL` in the server's `.env` file.
+
+**Frontend:**
+
 ```bash
 cd client
 npm install
-cp .env.example .env     # optional until Step 2
-npm run dev              # http://localhost:5173
-npm run build            # production build into client/dist
+cp .env.example .env
+npm run dev
 ```
 
-## Run the analysis engine tests (no install needed, Node 18+)
-```bash
-node --test server/tests/analysisEngine.test.js server/tests/resumeExtractor.test.js
-```
+Set `VITE_API_URL=http://localhost:5000/api` in the frontend `.env` file.
 
-## Deploy (frontend)
-Vercel: root directory `client`, build `npm run build`, output `dist`. `vercel.json` provides the SPA fallback.
-
-## Notes
-- Landing-page dashboard and templates are labelled sample/layout previews, not real data.
-- The scoring engine's score is guidance only, not an actual ATS score.
+**Important:** Resume analysis currently uses rule-based scoring, not AI. Its score is an estimate for guidance and is not an official ATS score.
