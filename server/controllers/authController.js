@@ -10,8 +10,8 @@ const { registerSchema, loginSchema } = require('../validators/authSchemas');
 // Cross-site (Vercel -> Render) cookies need SameSite=None + Secure in production.
 const cookieOptions = () => ({
   httpOnly: true,
-  secure: env.isProd,
-  sameSite: env.isProd ? 'none' : 'lax',
+  secure: true,
+  sameSite: 'none',
   path: '/',
 });
 const DAY = 24 * 60 * 60 * 1000;
