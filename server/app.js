@@ -9,8 +9,12 @@ const { apiLimiter } = require('./middleware/rateLimiters');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
+
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('env.isProd:', env.isProd);
+
 // Render runs behind a reverse proxy.
-if (process.env.NODE_ENV === 'production') {
+if (env.isProd) {
   app.set('trust proxy', 1);
 } // Render sits behind a proxy
 app.use(helmet());
