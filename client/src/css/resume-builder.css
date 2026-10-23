@@ -1,0 +1,34 @@
+.builder-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.builder-form{display:grid;gap:16px}.builder-preview{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto;background:#e9e5f7;border-radius:var(--radius-md);padding:12px}
+.builder-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.back{display:inline-flex;gap:6px;align-items:center;text-decoration:none;font-weight:600}
+.tabs{display:none;gap:8px;margin-bottom:16px}.tabs button{flex:1;padding:10px;border:1px solid var(--color-border);border-radius:999px;background:#fff;font:600 .9rem var(--font);cursor:pointer}.tabs button.on{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+.label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}.swatches button{width:32px;height:32px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px var(--color-border);cursor:pointer}.swatches button.on{box-shadow:0 0 0 3px var(--color-text)}
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.checks label{display:flex;gap:8px;align-items:center;font-weight:500}
+.entry-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.entry-grid .wide{grid-column:1/-1}.entry-grid .field{margin-top:12px}
+.entry-box{border:1px solid var(--color-border);border-radius:var(--radius-md);padding:4px 14px 14px;margin:0 0 14px}.entry-box legend{font-weight:600;font-size:.85rem;color:var(--color-muted);padding:0 6px}
+.entry-tools{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}.entry-tools .icon-btn{width:36px;height:36px}
+/* Resume sheet: A4 at 96dpi, shown scaled on screen and at full size when printed. */
+.resume-sheet{--rs-accent:#7c4dff;width:794px;min-height:1123px;margin:0 auto;background:#fff;color:#1a1a2e;padding:48px 52px;font-family:Calibri,Arial,sans-serif;font-size:13px;line-height:1.45;zoom:.62;box-sizing:border-box}
+.rs-small{font-size:11.5px}.rs-large{font-size:14.5px}
+.resume-sheet h1{font-size:2.1em;margin:0}.resume-sheet h3{font-size:.85em;letter-spacing:.1em;text-transform:uppercase;color:var(--rs-accent);margin:0 0 6px;padding-bottom:3px;border-bottom:1px solid var(--rs-accent)}
+.resume-sheet p{margin:0 0 4px}.resume-sheet ul{margin:4px 0 0;padding-left:18px}.resume-sheet li{margin-bottom:2px}
+.rs-section{margin-top:16px}.entry{margin-bottom:10px;break-inside:avoid;page-break-inside:avoid}.entry-top{display:flex;justify-content:space-between;gap:12px}.entry-top span{color:#555;white-space:nowrap}.entry em{color:#555}
+.rs-head{margin-bottom:4px}.rs-headline{color:var(--rs-accent);font-weight:600}.rs-contact{color:#555;font-size:.92em}
+.rs-classic{font-family:Georgia,'Times New Roman',serif}.rs-classic .rs-head{text-align:center}.rs-classic h3{color:#111;border-bottom-color:#111}.rs-classic .rs-headline{color:#333}
+.rs-modern{display:grid;grid-template-columns:240px 1fr;gap:28px;padding:0}.rs-modern .rs-side{background:#1d1640;color:#fff;padding:40px 22px}.rs-modern .rs-side h1{font-size:1.7em}.rs-modern .rs-side h3{color:#fff;border-bottom-color:rgba(255,255,255,.4)}.rs-modern .rs-side .rs-headline{color:#cfc3ff}
+.rs-modern .rs-contact-col{margin-top:14px;font-size:.92em;overflow-wrap:anywhere}.rs-modern .rs-main{padding:40px 36px 40px 0}.rs-modern .rs-side .entry-top{flex-direction:column;gap:0}.rs-modern .entry-top span{color:inherit;opacity:.8;white-space:normal}
+.rs-compact{padding:0}.rs-compact .rs-head{background:var(--rs-accent);color:#fff;padding:30px 40px;margin:0}.rs-compact .rs-headline,.rs-compact .rs-contact{color:#fff}
+.rs-compact .rs-cols{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;padding:12px 40px 36px}.rs-compact .rs-cols .entry-top{flex-direction:column;gap:0}
+.hide-narrow{display:block}
+@media(max-width:1200px){.builder-grid{grid-template-columns:1fr}.tabs{display:flex}.hide-narrow{display:none}.builder-preview{position:static;max-height:none}.resume-sheet{zoom:.5}}
+@media(max-width:600px){.entry-grid{grid-template-columns:1fr}.resume-sheet{zoom:.42}.checks{grid-template-columns:1fr}}
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff}
+  .sidebar,.mobile-bar,.drawer-backdrop,.topbar,.tabs,.builder-form,.error-state{display:none!important}
+  .app{display:block}.main{padding:0;max-width:none}
+  .builder-grid{display:block}
+  .builder-preview{display:block!important;position:static;max-height:none;overflow:visible;background:none;padding:0}
+  .resume-sheet{zoom:1!important;width:210mm;min-height:297mm;margin:0;box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
